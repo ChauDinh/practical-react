@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 
-import Header from "./components/Header";
 import Body, { Body2 } from "./components/Body";
+import Header from './components/Header';
 
 function App() {
   const add = (a, b) => a + b;
   return (
     <div className="App">
-      <Header 
+      <Header
         title="Hello from App" 
         num={5} 
         myObj={{
