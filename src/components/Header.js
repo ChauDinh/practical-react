@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Counter from './Counter';
 
 class Header extends Component {
   multiple(a, b) {
@@ -16,6 +17,8 @@ class Header extends Component {
         <div>{myArr.map(e => Math.pow(e, 2) + ` `)}</div>
         <div>{myFunc(4,4)}</div>
         <div>{this.multiple(4,4)}</div>
+        <Counter initCount={4} />
+        <Counter initCount={1000} />
       </header>
     )
   }
