@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import Body from "./components/Body";
 import Header from "./components/Header";
+import Body, { Body2 } from "./components/Body";
 
 function App() {
   const add = (a, b) => a + b;
@@ -22,6 +22,7 @@ function App() {
         text="Hello from body!" 
         myFunc={add}  
       />
+      <Body2 />
     </div>
   );
 }

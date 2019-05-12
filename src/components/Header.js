@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Header extends Component {
+class Header extends Component {
   multiple(a, b) {
     return a * b;
   }
