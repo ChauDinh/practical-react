@@ -9,14 +9,22 @@ export default class Counter extends Component {
     }
   }
 
-  handleButtonClick = () => {
+  handleButtonIncrement = () => {
     let count = this.state.count;
     this.setState({
       count: count + 1
     });
   }
 
+  handleButtonDecrement = () => {
+    let count = this.state.count;
+    this.setState({
+      count: count - 1
+    });
+  }
+
   componentDidMount() {
+    console.log("mounting...");
     setInterval(() => {
       this.setState({
         count: this.state.count + 1
@@ -24,11 +32,16 @@ export default class Counter extends Component {
     }, 1000);
   }
 
+  componentWillUnmount() {
+    console.log("unmounting...");
+  }
+
   render() {
     return (
       <div>
         <div>count: {this.state.count}</div>
-        <button onClick={this.handleButtonClick}>increment</button>
+        <button onClick={this.handleButtonDecrement}>decrement</button>
+        <button onClick={this.handleButtonIncrement}>increment</button>
       </div>
     )
   }

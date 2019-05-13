@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ImageSlider from './components/ImageSlider';
+import Counter from "./components/Counter";
 
 class App extends React.Component {
 
@@ -14,7 +14,11 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        {this.state.visible ? <ImageSlider /> : <div>I'm hidden</div> }
+        <div style={this.state.visible ? {} : {
+          display: "none"
+        }}>
+          <Counter initCount={0} />
+        </div>
         <button onClick={() => {
           this.setState({
             visible: !this.state.visible
