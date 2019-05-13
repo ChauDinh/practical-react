@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import MyForm from './components/MyForm';
+import ValidattionForm from './components/ValidattionForm';
 
 class App extends React.Component {
 
@@ -8,7 +8,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <MyForm />
+        <ValidattionForm />
       </div>
     );
   }
