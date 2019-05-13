@@ -1,28 +1,11 @@
 import React from 'react';
 import './App.css';
-
-import Body, { Body2 } from "./components/Body";
-import Header from './components/Header';
+import ImageSlider from './components/ImageSlider';
 
 function App() {
-  const add = (a, b) => a + b;
   return (
     <div className="App">
-      <Header
-        title="Hello from App" 
-        num={5} 
-        myObj={{
-          a: 5,
-          b: 6
-        }} 
-        myArr = {[1, 2, 3]}
-        myFunc = {add}
-      />
-      <Body 
-        text="Hello from body!" 
-        myFunc={add}  
-      />
-      <Body2 />
+      <ImageSlider />
     </div>
   );
 }
