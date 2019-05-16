@@ -5,11 +5,11 @@ import Todo from './Todo';
 /**
  * TodoMVC
  * 
- * Add Todo
- * Display Todos
- * Cross off todo
- * Show number of active todos
- * Filter all/active/complete
+ * Add Todo - done
+ * Display Todos - done
+ * Cross off todo - done
+ * Show number of active todos - done
+ * Filter all/active/complete - done
  * Delete todos
  * Delete all complete
  *  Only show if atleast one is complete
