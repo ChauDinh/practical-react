@@ -20,7 +20,8 @@ export default class TodoList extends Component {
 
   state = {
     todos: [],
-    todoToShow: 'all'
+    todoToShow: 'all',
+    toggleAllComplete: true
   };
 
   addTodo = (todo) => {
@@ -51,6 +52,18 @@ export default class TodoList extends Component {
     })
   }
 
+  handleDeleteTodo = id => {
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.id !== id)
+    });
+  }
+
+  removeAllCompleteTodos = () => {
+    this.setState({
+      todos: this.state.todos.filter(todo => !todo.complete)
+    });
+  }
+
   render() {
     let todos = [];
 
@@ -70,6 +83,7 @@ export default class TodoList extends Component {
             <Todo 
               key={todo.id} 
               toggleComplete={() => this.toggleComplete(todo.id)} 
+              onDelete={() => this.handleDeleteTodo(todo.id)}
               todo={todo} 
             />
           ))
@@ -81,6 +95,23 @@ export default class TodoList extends Component {
           <button onClick={() => this.updateTodoToShow('all')}>all</button>
           <button onClick={() => this.updateTodoToShow('active')}>active</button>
           <button onClick={() => this.updateTodoToShow('complete')}>complete</button>
+        </div>
+        {this.state.todos.some(todo => todo.complete) ? (
+          <div>
+            <button onClick={this.removeAllCompleteTodos}>clear completed</button>
+          </div>) 
+          : null
+        }
+        <div>
+          <button onClick={() => this.setState({
+            todos: this.state.todos.map(todo => ({
+              ...todo,
+              complete: this.state.toggleAllComplete
+            })),
+            toggleAllComplete: !this.state.toggleAllComplete
+          })}>
+            toggle all complete
+          </button>
         </div>
       </div>
     )
